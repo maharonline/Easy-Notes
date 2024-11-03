@@ -1,0 +1,23 @@
+footer{
+    background-color: #131118;
+    color: #fff;
+
+    .container{
+        ul{
+            list-style: none;
+            // padding: ;
+        }
+         img{
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+    img.logo{
+        filter: invert(100%) brightness(200%);
+
+    }
+
+    ul li{
+        line-height: 30px;
+    }
+}

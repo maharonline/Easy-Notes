@@ -1,0 +1,16 @@
+@import"./sass/mixins";
+@import "./sass/bootstrap";
+@import"./sass/auth";
+@import"./sass/footer";
+@import "./sass/customerCard.scss";
+@import "./sass/loader.scss";
+
+#root{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    flex:1 0 auto
+}

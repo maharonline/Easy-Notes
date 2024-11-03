@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import "bootstrap/dist/js/bootstrap.bundle"
+import Routes from"./Pages/Routes"
+import Loader from './components/Loader';
+import { useAuthContext } from './Context/AuthContext';
+import { ConfigProvider } from 'antd';
 
 function App() {
+  const {isAppLoading}=useAuthContext()
+  if(isAppLoading)return<Loader/>
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <ConfigProvider theme={{ token: { colorPrimary: '#131118',borderRadius:2 } }}>
+   {
+     !isAppLoading?
+     <Routes/>   
+     :
+     <Loader/>
+   }
+  </ConfigProvider>
+    </>
   );
 }
 

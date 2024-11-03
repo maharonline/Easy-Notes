@@ -1,0 +1,69 @@
+.sidebar-header {
+  text-align: center;
+  padding: 20px;
+
+  .sidebar-name {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 550px) {
+    .sidebar-name {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .sidebar-name {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+.drawer-toggle {
+  display: none;
+}
+
+// Adjust font size and layout for screens below 550px
+@media (max-width: 550px) {
+  .drawer-toggle {
+    display: block;
+  }
+
+  .ant-menu-item {
+    font-size: 0.85rem;
+  }
+
+  .site-layout {
+    margin-left: 0 !important;  // No sidebar for small screens
+  }
+
+  .sidebar-header {
+    padding: 10px;
+  }
+
+  .sidebar-name {
+    font-size: 0.9rem;
+  }
+
+  .ant-avatar {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+// For very small screens (mobile)
+@media (max-width: 450px) {
+  .ant-avatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .sidebar-name {
+    font-size: 0.75rem;
+  }
+
+  .ant-menu-item {
+    font-size: 0.75rem;
+  }
+}
