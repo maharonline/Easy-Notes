@@ -1,6 +1,6 @@
 import { Col, Input, Row, Form, Progress, Button, Upload } from 'antd';
 import FormItem from 'antd/es/form/FormItem';
-import { doc, getDoc, serverTimestamp, setDoc, updateDoc } from 'firebase/firestore';
+import { doc, getDoc, serverTimestamp, updateDoc } from 'firebase/firestore';
 import React, { useCallback, useEffect, useState } from 'react';
 import { firestore, storage } from 'config/firebase';
 import { useParams } from 'react-router-dom';
@@ -37,7 +37,7 @@ export default function Edit() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { fullname, email,firstName,Datecreated } = state;
+    const { fullname, email,} = state;
     if (!fullname) return window.toastify('Please Enter Your Name', 'error');
 
     const formData = { fullname, email, UpdatingTime: serverTimestamp(), };

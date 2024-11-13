@@ -5,7 +5,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../../config/firebase'
 import FormItem from 'antd/es/form/FormItem'
 
-const {Title ,Paragraph}=Typography
+const {Title }=Typography
 
 const initialState={email:"",password:""}
 export default function Login() {

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Layout, Menu, Avatar, Drawer, Button, Card } from 'antd';
-import { HomeOutlined, UserOutlined, AppstoreAddOutlined, UnorderedListOutlined, SettingOutlined, ProfileOutlined, SafetyOutlined, EditOutlined, MenuUnfoldOutlined, LogoutOutlined, PlusOutlined } from '@ant-design/icons';
+import { HomeOutlined, UserOutlined, SettingOutlined, ProfileOutlined, SafetyOutlined, EditOutlined, MenuUnfoldOutlined, LogoutOutlined, PlusOutlined } from '@ant-design/icons';
 import '../../sass/Sidebar.scss';
 import { useProfileContext } from 'Context/ReadProfileContext';
 import { Link, Route, Routes, useNavigate, useLocation } from 'react-router-dom'; // Import useLocation
 import { Content } from 'antd/es/layout/layout';
 import Profile from './Profile';
-import Home from './Home';
 import Passwordupdate from './Passwordupdate';
 import User from './TableUser/User';
 import Notes from './Notes/Notes'; // Existing Notes component

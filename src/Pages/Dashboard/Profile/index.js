@@ -9,7 +9,7 @@ import { useProfileContext } from 'Context/ReadProfileContext';
 
 
 export default function Profile() {
-  const {handleLogout}=useAuthContext()
+  
   const {data}=useProfileContext()
   const { users } = useAuthContext()
 

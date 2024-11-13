@@ -4,8 +4,16 @@ import { PlusOutlined, CommentOutlined, EditOutlined, DeleteOutlined } from '@an
 import { collection, addDoc, onSnapshot, updateDoc, deleteDoc, doc, getDoc } from 'firebase/firestore';
 import { useAuthContext } from 'Context/AuthContext';
 import { firestore } from 'config/firebase';
+import  { useProfileContext } from 'Context/ReadProfileContext';
+
+// Firebase collection references
+const notesCollectionRef = collection(firestore, 'notes');
+const commentsCollectionRef = collection(firestore, 'comments');
+const usersCollectionRef = collection(firestore, 'users');
 
 export default function Notes() {
+  const {data}=useProfileContext()
+  console.log(data)
   const { user } = useAuthContext(); // Get the logged-in user
   const [notes, setNotes] = useState([]);
   const [comments, setComments] = useState([]);
@@ -15,10 +23,6 @@ export default function Notes() {
   const [editingNote, setEditingNote] = useState(null);
   const [commentText, setCommentText] = useState('');
   const [selectedNoteId, setSelectedNoteId] = useState(null);
-
-  const notesCollectionRef = collection(firestore, 'notes');
-  const commentsCollectionRef = collection(firestore, 'comments');
-  const usersCollectionRef = collection(firestore, 'users'); // Assume each user has a document in `users` with their full name.
 
   useEffect(() => {
     // Fetch notes in real-time
@@ -43,7 +47,7 @@ export default function Notes() {
       unsubscribeNotes();
       unsubscribeComments();
     };
-  }, []);
+  }, [user?.uid]);
 
   // Add new note to Firestore
   const handleAddNote = async () => {
@@ -105,8 +109,10 @@ export default function Notes() {
 
     await addDoc(commentsCollectionRef, {
       text: commentText,
-      createdAt: new Date(),
-      userId: user.uid,
+      createdAt: new Date(),  
+      userId: data.fullname,
+      userid:user.uid,
+      
       noteId: selectedNoteId
     });
 
@@ -236,6 +242,6 @@ export default function Notes() {
           <Input.TextArea value={commentText} onChange={(e) => setCommentText(e.target.value)} />
         </Form.Item>
       </Modal>
-    </div>
-  );
+    </div>
+  );
 }

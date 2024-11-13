@@ -1,7 +1,7 @@
 import React from 'react'
 import ImageCarousel from 'components/crosoul'
 import { Col, Row, Typography } from 'antd'
-import { ShoppingOutlined,ArrowRightOutlined} from '@ant-design/icons';
+import {ArrowRightOutlined} from '@ant-design/icons';
 
 const {Title}=Typography
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import CustomerCard from './CustomerCard';
 import Instagram from './Instagram';
-import Confidence from './Confidence';
+
 import Hero from './Hero';
 import Deals from './Deals';
 import ShopingCatgories from './ShopingCatgories';

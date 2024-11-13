@@ -1,7 +1,6 @@
-import { Button, Col, Image, Row, Typography } from 'antd'
+import {  Col, Image, Row, Typography } from 'antd'
 import React from 'react'
-import { ShoppingOutlined} from '@ant-design/icons';
-import Paragraph from 'antd/es/skeleton/Paragraph';
+
 
 const {Title,Text,}=Typography
 export default function Hero() {
